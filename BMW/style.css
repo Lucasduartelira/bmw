@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--cor-textos);
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --cor-detalhes: #0066B1;
+  --cor-textos: #fff;
+  --cor-fundo: #000;
+}
+
+section {
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  border-bottom: solid 1px var(--cor-detalhes);
+  background: transparent;
+}
+
+/* Esta classe garante que o conteúdo do topo alinhe com o conteúdo do meio */
+.header-container {
+  max-width: 1200px;/* Mesma largura da sua section */
+  margin: 0 auto;/* Centraliza o bloco */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;/* Espaçamento interno vertical */
+}
+
+.caixa-video {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.caixa-video video {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  object-fit: cover;
+}
+
+.mascara {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
+
+.nav-list a {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-list {
+  display: flex;
+  gap: 36px;
+}
+
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #1c69d4;
+  transition: width 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: #1c69d4;
+}
+
+.nav-list a:hover::after {
+  width: 100%;
+}
+
+/*-----------------------------------------headline*/ 
+
+.caixa-principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4em 0;
+  max-width: 1240px;
+  margin: 60px auto;
+}
+
+.readline h1 {
+  color: var(--cor-detalhes);
+  text-transform: uppercase;
+  font-size: 48px;
+}
+
+.readline p {
+  font-weight: lighter;
+}
+
+.readline h1,p {
+  padding: 0.5em 0;
+}
+
+.modal h2 {
+  color: var(--cor-detalhes);
+  text-transform: uppercase;
+}
+
+/*----------------------------------container-tecnologia*/
+
+.container-tecnologia {
+  max-width: 1240px;/* Espaço entre esta seção e os outros conteúdos da main */
+  padding: 3em 0 8em 0;
+}
+
+.titulo-tecnologia {
+  color: var(--cor-textos);
+  text-align: center;
+  font-size: 42px;
+  padding: 1em 0;
+}
+
+.grid-tecnologia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  gap: 30px;
+}
+
+.card-tecnologia {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: solid 1px var(--cor-detalhes);
+  border-radius: 6px;
+}
+
+.card-tecnologia:hover {
+  transform: translateY(-8px);
+}
+
+.card-tecnologia h3 {
+  color: var(--cor-textos);
+  font-size: 21px;
+  border-bottom: solid 1px var(--cor-detalhes);
+  padding: 0 0 10px 0;
+}
+
+.card-tecnologia p {
+  font-size: 0.8em;
+}
+
+.card-tecnologia img {
+  border-radius: 6px;
+  width: 100%;
+}
+
+.botao-saiba-mais {
+  text-align: center;
+  background-color: var(--cor-detalhes);
+  padding: 1em;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/*----------------------------------vehicle-configurator*/
+
+.vehicle-configurator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 2em 0;
+  box-shadow: 0 0 50px rgba(0, 102, 255, 0.8);
+  width: 100%;
+  border-radius: 6px;
+  max-height: 800px ;
+}
+
+.vehicle-configurator h2 {
+  text-align: center;
+  padding: 1em 0 1em 0;
+  font-size: 36px;
+}
+
+.categorias {
+  display: flex;
+  gap: 50px;
+}
+
+.botao-encomendar {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  width: 500px;
+  border-radius: 6px;
+  border: solid 1px var(--cor-detalhes);
+  padding: 1em 0;
+  box-shadow: 0 0 50px rgba(0, 102, 255, 0.8);
+  font-size: 18px;
+}
+
+.botao-encomendar:active {
+  transform: scale(0.96);
+}
+
+
+/*----------------------------------color-selector*/
+
+.color-selector {
+  display: flex;
+  border: none;
+}
+
+.color-selector img {
+  width: 400px;
+}
+
+/* Esconde o círculo padrão do navegador */
+.color-selector input[type="radio"] {
+  display: none;
+}
+
+/* Cria o círculo customizado */
+.color-selector label {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+/* Estilo quando a cor for clicada/selecionada */
+.color-selector input[type="radio"]:checked + label {
+  border-color: #0066ff; /* Cor azul de destaque da BMW */
+  transform: scale(1.1);
+  box-shadow: 0 0 50px rgba(0, 102, 255, 0.8);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  border: solid 1px var(--cor-detalhes);
+  border-radius: 6px;
+  padding: 1em;
+  box-shadow: 0 0 50px rgba(0, 102, 255, 0.8);
+  gap: 10px;
+}
+
+.option input {
+  display: none;
+}
+
+.color-radios legend {
+  padding: 3em 0 3em 0;
+}
+
+.color-selector img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.simulation-car {
+  display: flex;
+  justify-content: center;
+  width: 600px;
+}
+
+
+/*----------------------------------google maps*/
+
+.stores {
+  max-width: 1240px;
+  align-items: center;
+  padding: 8em 0;
+}
+
+.stores-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 3rem;
+}
+
+.stores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1em;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.store-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+}
+
+.store-card iframe {
+  width: 100%;
+  height: 80px;
+  border: none;
+}
+
+.store-info {
+  padding: 1.5rem;
+}
+
+.store-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/*----------------------------------footer*/
+
+.footer {
+  display: flex;
+  align-items: center;     /* Alinha verticalmente no centro */
+  height: 200px;           /* Altura do seu banner */
+  text-align: center;
+  box-shadow: 0 0 50px rgba(0, 102, 255, 0.8);
+}
+
+.test-driver {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  width: 100%;
+}
+
+.test-driver img {
+  margin-right: auto;
+}
+
+.test-driver h3 {
+  margin-right: auto;
+}
+
+
