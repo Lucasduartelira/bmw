@@ -14,7 +14,7 @@
 
 section {
   margin: 0 auto;
-  max-width: 1240px;
+  max-width: 1000px;
 }
 
 .header {
@@ -24,16 +24,18 @@ section {
   z-index: 2;
   border-bottom: solid 1px var(--cor-detalhes);
   background: transparent;
+  padding: 0.5rem 0;
 }
 
 /* Esta classe garante que o conteúdo do topo alinhe com o conteúdo do meio */
 .header-container {
-  max-width: 1200px;/* Mesma largura da sua section */
-  margin: 0 auto;/* Centraliza o bloco */
+  max-width: 1200px;
+  /* Mesma largura da sua section */
+  margin: 0 auto;
+  /* Centraliza o bloco */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 0;/* Espaçamento interno vertical */
 }
 
 .caixa-video {
@@ -89,14 +91,14 @@ section {
   width: 100%;
 }
 
-/*-----------------------------------------headline*/ 
+/*-----------------------------------------headline*/
 
 .caixa-principal {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 4em 0;
-  max-width: 1240px;
+  max-width: 1200px;
   margin: 60px auto;
 }
 
@@ -110,7 +112,8 @@ section {
   font-weight: lighter;
 }
 
-.readline h1,p {
+.readline h1,
+p {
   padding: 0.5em 0;
 }
 
@@ -121,59 +124,7 @@ section {
 
 /*----------------------------------container-tecnologia*/
 
-.container-tecnologia {
-  max-width: 1240px;/* Espaço entre esta seção e os outros conteúdos da main */
-  padding: 3em 0 8em 0;
-}
 
-.titulo-tecnologia {
-  color: var(--cor-textos);
-  text-align: center;
-  font-size: 42px;
-  padding: 1em 0;
-}
-
-.grid-tecnologia {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  gap: 30px;
-}
-
-.card-tecnologia {
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  border: solid 1px var(--cor-detalhes);
-  border-radius: 6px;
-}
-
-.card-tecnologia:hover {
-  transform: translateY(-8px);
-}
-
-.card-tecnologia h3 {
-  color: var(--cor-textos);
-  font-size: 21px;
-  border-bottom: solid 1px var(--cor-detalhes);
-  padding: 0 0 10px 0;
-}
-
-.card-tecnologia p {
-  font-size: 0.8em;
-}
-
-.card-tecnologia img {
-  border-radius: 6px;
-  width: 100%;
-}
-
-.botao-saiba-mais {
-  text-align: center;
-  background-color: var(--cor-detalhes);
-  padding: 1em;
-  border-radius: 6px;
-  text-decoration: none;
-}
 
 /*----------------------------------vehicle-configurator*/
 
@@ -181,11 +132,9 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 0 2em 0;
+  padding: 2rem 2rem;
   box-shadow: 0 0 50px rgba(0, 102, 255, 0.8);
-  width: 100%;
-  border-radius: 6px;
-  max-height: 800px ;
+  border-radius: 24px;
 }
 
 .vehicle-configurator h2 {
@@ -243,8 +192,9 @@ section {
 }
 
 /* Estilo quando a cor for clicada/selecionada */
-.color-selector input[type="radio"]:checked + label {
-  border-color: #0066ff; /* Cor azul de destaque da BMW */
+.color-selector input[type="radio"]:checked+label {
+  border-color: #0066ff;
+  /* Cor azul de destaque da BMW */
   transform: scale(1.1);
   box-shadow: 0 0 50px rgba(0, 102, 255, 0.8);
 }
@@ -283,7 +233,7 @@ section {
 /*----------------------------------google maps*/
 
 .stores {
-  max-width: 1240px;
+  max-width: 1200px;
   align-items: center;
   padding: 8em 0;
 }
@@ -329,8 +279,10 @@ section {
 
 .footer {
   display: flex;
-  align-items: center;     /* Alinha verticalmente no centro */
-  height: 200px;           /* Altura do seu banner */
+  align-items: center;
+  /* Alinha verticalmente no centro */
+  height: 200px;
+  /* Altura do seu banner */
   text-align: center;
   box-shadow: 0 0 50px rgba(0, 102, 255, 0.8);
 }
@@ -374,7 +326,7 @@ section {
 }
 
 /* bolinha selecionada */
-.color-radios input[type="radio"]:checked + label {
+.color-radios input[type="radio"]:checked+label {
   border-color: #ffffff;
   transform: scale(1.15);
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
@@ -385,4 +337,192 @@ section {
   width: 100%;
   max-width: 420px;
   transition: opacity 0.3s ease;
+}
+
+/* ══════════════════════════════════════
+   MOBILE — até 768px
+══════════════════════════════════════ */
+@media screen and (max-width: 768px) {
+
+  .logo {
+    width: 60px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    /* Força um item abaixo do outro */
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    /* Garante que o padding não quebre a largura */
+    gap: 20px;
+    /* Espaço uniforme entre logo, menu e textos */
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    line-height: 0.8rem;
+  }
+
+  /* HEADLINE */
+  .caixa-principal {
+    flex-direction: column;
+    text-align: center;
+    padding: 8rem 2rem 2rem 2rem;
+    margin: 0 auto;
+
+  }
+
+  .readline h1 {
+    font-size: 28px;
+  }
+
+  .imagem-readline img {
+    width: 100%;
+  }
+
+  /* TECNOLOGIA */
+  .container-tecnologia {
+    padding: 0 2rem;
+  }
+
+  .titulo-tecnologia {
+    font-size: 26px;
+  }
+
+  .grid-tecnologia {
+    grid-template-columns: 1fr;
+    padding: 2rem 0;
+  }
+
+  /* CONFIGURADOR */
+  .vehicle-configurator {
+    padding: 1.5rem;
+    max-width: 350px;
+    height: auto;
+  }
+
+  .vehicle-configurator h2 {
+    font-size: 24px;
+  }
+
+  .categorias {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .option {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .color-selector {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .color-radios {
+    justify-content: center;
+  }
+
+  .simulation-car {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .botao-encomendar {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* STORES */
+  .stores {
+    padding: 3em 1rem;
+  }
+
+  .stores-title {
+    font-size: 26px;
+  }
+
+  .stores-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 2rem 2rem;
+  }
+
+  .store-card iframe {
+    height: 160px;
+  }
+
+  /* FOOTER */
+  .footer {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .test-driver {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .test-driver img {
+    margin: 0 auto;
+  }
+
+  .test-driver h3 {
+    margin: 0 auto;
+  }
+
+}
+
+/* ══════════════════════════════════════
+   TABLET — 769px até 1024px
+══════════════════════════════════════ */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+  .readline h1 {
+    font-size: 36px;
+  }
+
+  .caixa-principal {
+    padding: 5em 1.5rem 2rem;
+    gap: 2rem;
+  }
+
+  .titulo-tecnologia {
+    font-size: 32px;
+  }
+
+  .grid-tecnologia {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vehicle-configurator {
+    max-height: none;
+    padding: 2rem;
+  }
+
+  .categorias {
+    gap: 1.5rem;
+  }
+
+  .simulation-car {
+    max-width: 380px;
+  }
+
+  .botao-encomendar {
+    width: 380px;
+  }
+
+  .stores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
